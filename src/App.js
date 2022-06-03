@@ -1,9 +1,15 @@
-import Home from "./pages/Home";
+import Pages from "./pages/Pages";
+import Category from "./components/Category";
+import { BrowserRouter } from "react-router-dom";
+import Search from "./components/Search";
 function App() {
   return (
     <div className="App">
-      <h1>Hello Ram</h1>
-      <Home />
+      <BrowserRouter>
+        <Search />
+        <Category />
+        <Pages />
+      </BrowserRouter>
     </div>
   );
 }
