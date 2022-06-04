@@ -1,14 +1,22 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { FaSearch } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 
 function Search() {
+    const [input, setInput] = useState("")
+    const navigate = useNavigate()
+    const submitHandler = (e) => {
+        e.preventDefault()
+        navigate('/searched/' + input)
+
+    }
     return (
 
-        <FormStyle action="">
+        <FormStyle onSubmit={submitHandler}>
             <div>
                 <FaSearch></FaSearch>
-                <input type="text" />
+                <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
             </div>
         </FormStyle>
 
@@ -16,9 +24,6 @@ function Search() {
 }
 
 const FormStyle = styled.form`
- display: grid;
- place-content: center;
-  margin: 0 20rem;
   div{
       width:100%;
       position:relative
@@ -32,6 +37,7 @@ const FormStyle = styled.form`
       border: none;
       border-radius: 1rem;
       outline: none;
+      width:calc(100% - 6rem)
   }
   svg{
       position: absolute;

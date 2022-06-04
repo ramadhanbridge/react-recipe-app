@@ -18,9 +18,9 @@ export default function Category() {
                 <GiNoodles />
                 <h4>Thai</h4>
             </NLink>
-            <NLink to='/cuisine/Japanese'>
+            <NLink to='/cuisine/french'>
                 <GiChopsticks />
-                <h4>Japanese</h4>
+                <h4>French</h4>
             </NLink>
 
         </List>
